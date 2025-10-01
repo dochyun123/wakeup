@@ -115,17 +115,3 @@ gspread.exceptions.APIError: [403]
 1. Google Sheets API가 활성화되어 있는지 확인
 2. 서비스 계정 이메일에 Spreadsheet 공유 권한이 있는지 확인
 3. JSON 키 파일 경로가 올바른지 확인
-
-### 패키지 설치 오류
-```bash
-# 캐시 삭제 후 재설치
-pip cache purge
-pip install -r requirements.txt --no-cache-dir
-```
-
-### 환경 변수 로드 안 됨
-`.env` 파일이 프로젝트 루트 디렉토리에 있는지 확인하고, `python-dotenv` 패키지가 설치되어 있는지 확인하세요.
-
-```bash
-pip install python-dotenv
-```
