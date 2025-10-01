@@ -1,0 +1,4 @@
+file_name: "wakeup_20250621.csv"
+NotValid_msg: "유효하지 않은 QR코드입니다."
+Welcome_msg: "입장 완료되었습니다."
+Duplicate_msg: "이미 입장완료된 QR코드입니다."
