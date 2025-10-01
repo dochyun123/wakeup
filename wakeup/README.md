@@ -8,6 +8,7 @@ QR 코드 체크 시스템 - 로컬 CSV 또는 Google Spreadsheet를 사용하�
 - [사용 방법](#사용-방법)
 - [설정 파일](#설정-파일)
 - [문제 해결](#문제-해결)
+- [Apps script](#기능-사용방법)
 
 ## ✨ 기능
 
@@ -99,9 +100,6 @@ wakeup/
 ├── checkQR.py              # 로컬 CSV 사용
 ├── QRgspread.py            # Google Spreadsheet 사용
 ├── requirements.txt        # Python 패키지 목록
-├── environment.yml         # Conda 환경 설정
-├── .env.example            # 환경 변수 예시
-├── .gitignore             # Git 제외 파일
 └── README.md              # 프로젝트 문서
 ```
 
@@ -115,3 +113,33 @@ gspread.exceptions.APIError: [403]
 1. Google Sheets API가 활성화되어 있는지 확인
 2. 서비스 계정 이메일에 Spreadsheet 공유 권한이 있는지 확인
 3. JSON 키 파일 경로가 올바른지 확인
+
+# 🔗 Google Apps Script 연동
+
+Google Spreadsheet에서 자동으로 QR 코드를 생성하고 문자 메시지를 전송하는 기능입니다.
+
+### 기능
+- **고유번호 자동 생성**: 응답이 기록될 때마다 고유 ID 생성
+- **QR URL 자동 생성**: 생성된 고유번호로 QR 코드 URL 생성
+- **문자 메시지 자동 전송**: QR 코드 정보를 SMS로 전송
+
+#### 1. Apps Script 에디터 열기
+1. Google Spreadsheet 열기
+2. 상단 메뉴: **확장 프로그램** > **Apps Script** 클릭
+3. 새 Apps Script 프로젝트가 열립니다
+
+#### 2. 코드 작성
+1. 기본 생성된 `Code.gs` 파일 내용을 모두 삭제
+2. 프로젝트 내 `appscript.js` 파일 내용을 복사
+3. Apps Script 에디터에 붙여넣기
+4. 💾 **저장** (Ctrl + S 또는 저장 아이콘 클릭)
+
+#### 3. 트리거 설정
+1. 좌측 메뉴에서 **⏰ 트리거** (시계 아이콘) 클릭
+2. 우측 하단 **+ 트리거 추가** 클릭
+3. 다음과 같이 설정:
+   - **실행할 함수 선택**: `onFormSubmit` (또는 코드의 메인 함수명)
+   - **이벤트 소스 선택**: 스프레드시트에서
+   - **이벤트 유형 선택**: 양식 제출 시
+4. **저장** 클릭
+5. Google 계정 권한 승인
