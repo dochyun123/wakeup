@@ -27,7 +27,7 @@ cd wakeup
 
 **conda 환경 사용 (권장)**
 ```bash
-conda env create -f environment.yml
+conda env create -n wakeup
 conda activate wakeup
 ```
 
