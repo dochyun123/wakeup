@@ -21,24 +21,24 @@ QR 코드 체크 시스템 - 로컬 CSV 또는 Google Spreadsheet를 사용하�
 
 #### 시작 화면
 
-![시작 화면](./시작화면.png)
+![시작 화면](./images/startUI.png)
 
 
 **유효하지 않은 QR 입력 시**
 
-![오류 화면](./오류화면.png)
+![오류 화면](./images/ErrorUI.png)
 
 **유효한 QR 입력 시**
 
-![통과 화면](./통과화면.png)
+![통과 화면](./images/PassUI.png)
 
 **이미 사용된 QR 입력 시**
 
-![중복 화면](./중복화면.png)
+![중복 화면](./images/DuplicateUI.png)
 
-### 워크플로우
 
-![Workflow](./Workflow.png)
+#### 워크플로우
+![워크플로우](./images/Diagram.png)
 
 ## 🚀 설치 방법
 
@@ -123,47 +123,9 @@ python QRgspread.py
 }
 ```
 
-## 📁 프로젝트 구조
 
-```
-wakeup/
-├── checkQR.py              # 로컬 CSV 사용
-├── QRgspread.py            # Google Spreadsheet 사용
-├── requirements.txt        # Python 패키지 목록
-└── README.md              # 프로젝트 문서
-```
-
-## 🔧 문제 해결
-
-### Google Sheets API 오류
-
-```
-gspread.exceptions.APIError: [403]
-```
-
-**해결 방법:**
-
-1. Google Sheets API가 활성화되어 있는지 확인
-2. 서비스 계정 이메일에 Spreadsheet 공유 권한이 있는지 확인
-3. JSON 키 파일 경로가 올바른지 확인
-
-<<<<<<< HEAD
-### 패키지 설치 오류
-
-```bash
-# 캐시 삭제 후 재설치
-pip cache purge
-pip install -r requirements.txt --no-cache-dir
-```
-
-### 환경 변수 로드 안 됨
-
-`.env` 파일이 프로젝트 루트 디렉토리에 있는지 확인하고, `python-dotenv` 패키지가 설치되어 있는지 확인하세요.
 =======
 # 🔗 Google Apps Script 연동
-
-Google Spreadsheet에서 자동으로 QR 코드를 생성하고 문자 메시지를 전송하는 기능입니다.
->>>>>>> 46fabedb7e509f99c3e2e06c2ffa4602cf165fb8
 
 ### 기능
 - **고유번호 자동 생성**: 응답이 기록될 때마다 고유 ID 생성
